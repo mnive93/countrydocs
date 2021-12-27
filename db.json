@@ -1,0 +1,39 @@
+{
+  "countries": [
+    {
+      "id": "ind",
+      "name": "India",
+      "documents": [
+        {
+          "id": "aadhaar",
+          "name": "Aadhaar",
+          "sides": [
+            "front",
+            "back"
+          ]
+        },
+        {
+          "id": "pan",
+          "name": "PAN",
+          "sides": [
+            "front"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usa",
+      "name": "USA",
+      "documents": [
+        {
+          "id": "ss",
+          "name": "Social security",
+          "sides": [
+            "front",
+            "back"
+          ]
+        }
+      ]
+    }
+  ]
+}
