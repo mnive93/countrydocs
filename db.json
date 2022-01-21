@@ -1,41 +1,41 @@
 {
-  "countries": [
-    {
-      "id": "ind",
-      "name": "India",
-        "enabled":true,
-      "documents": [
-        {
-          "id": "aadhaar",
-          "name": "Aadhaar",
-          "sides": [
-            "front",
-            "back"
-          ]
-        },
-        {
-          "id": "pan",
-          "name": "PAN",
-          "sides": [
-            "front"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "usa",
-      "name": "USA",
-              "enabled":false,
-      "documents": [
-        {
-          "id": "ss",
-          "name": "Social security",
-          "sides": [
-            "front",
-            "back"
-          ]
-        }
-      ]
-    }
-  ]
+   "countries":[
+      {
+         "id":"ind",
+         "name":"India",
+         "enabled":true,
+         "documents":[
+            {
+               "id":"aadhaar",
+               "name":"Aadhaar",
+               "sides":[
+                  "front",
+                  "back"
+               ]
+            },
+            {
+               "id":"pan",
+               "name":"PAN",
+               "sides":[
+                  "front"
+               ]
+            }
+         ]
+      },
+      {
+         "id":"usa",
+         "name":"USA",
+         "enabled":false,
+         "documents":[
+            {
+               "id":"ss",
+               "name":"Social security",
+               "sides":[
+                  "front",
+                  "back"
+               ]
+            }
+         ]
+      }
+   ]
 }
