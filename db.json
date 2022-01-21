@@ -3,6 +3,7 @@
     {
       "id": "ind",
       "name": "India",
+        "enabled":true
       "documents": [
         {
           "id": "aadhaar",
@@ -24,6 +25,7 @@
     {
       "id": "usa",
       "name": "USA",
+              "enabled":false
       "documents": [
         {
           "id": "ss",
