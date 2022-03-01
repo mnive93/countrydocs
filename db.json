@@ -1,5 +1,21 @@
 {
    "countries":[
+      
+      {
+         "id":"usa",
+         "name":"USA",
+         "enabled":true,
+         "documents":[
+            {
+               "id":"ss",
+               "name":"Social security",
+               "sides":[
+                  "front",
+                  "back"
+               ]
+            }
+         ]
+      },
       {
          "id":"ind",
          "name":"India",
@@ -23,16 +39,23 @@
          ]
       },
       {
-         "id":"usa",
-         "name":"USA",
-         "enabled":false,
+         "id":"vnm",
+         "name":"Vietnam",
+         "enabled":true,
          "documents":[
             {
-               "id":"ss",
-               "name":"Social security",
+               "id":"nid",
+               "name":"NID",
                "sides":[
                   "front",
                   "back"
+               ]
+            },
+            {
+               "id":"dl",
+               "name":"Drivers License",
+               "sides":[
+                  "front"
                ]
             }
          ]
