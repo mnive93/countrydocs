@@ -13,15 +13,7 @@
 			"maximum": "y.y"
 		}
 	},
-	"modules": [{
-			"type": "start",
-			"id": "mod_0",
-			"nextStep": "mod_1",
-			"properties": {
-				"showLanguagePicker": true,
-				"numberOfSteps": 3
-			}
-		},
+	"modules": [
 		{
 			"type": "countries",
 			"id": "mod_1",
@@ -99,11 +91,7 @@
 			"pass": "mod_4",
 			"fail": "decline",
 			"rule": "(mod_3.summary == rejected) && (mod_3.age > 18)"
-		},
-		"condition_2": {
-			"pass": "approve",
-			"fail": "manualReview",
-			"rule": "(mod_3.summary = manualReview)"
 		}
+		
 	}
 }
