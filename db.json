@@ -81,17 +81,5 @@
 			"nextStep": "condition_2"
 		}
 	],
-	"conditions": {
-		"condition_0": {
-			"pass": "mod_3",
-			"fail": "decline",
-			"rule": "(mod_2.age > 18)"
-		},
-		"condition_1": {
-			"pass": "mod_4",
-			"fail": "decline",
-			"rule": "(mod_3.summary == rejected) && (mod_3.age > 18)"
-		}
-		
-	}
+	
 }
