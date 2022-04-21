@@ -1,13 +1,6 @@
 {
 	"sdk_versions": {
-		"websdk": {
-			"minimum": "x.x",
-			"maximum": "y.y"
-		},
-		"android": {
-			"minimum": "x.x",
-			"maximum": "y.y"
-		},
+		
 		"ios": {
 			"minimum": "x.x",
 			"maximum": "y.y"
