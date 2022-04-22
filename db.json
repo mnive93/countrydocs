@@ -24,7 +24,7 @@
 		{
 			"type": "doc_verification",
 			"id": "mod_2",
-			"nextStep": "condition_0",
+			"nextStep": "mod_3",
 			"properties": {
 				"allowUpload": "yes",
 				"url": "{region}.idv.hyperverge.co/v1/readId",
