@@ -1,78 +1,112 @@
 {
-	"sdk_versions": {
-		
-		"ios": {
-			"minimum": "x.x",
-			"maximum": "y.y"
-		}
-	},
-	"modules": [
-		{
-			"type": "countries",
-			"id": "mod_1",
-			"nextStep": "mod_2",
-			"properties": {
-				"countriesSupported": [
-					"usa",
-					"irl",
-					"ind",
-					"vnm"
-					
-				]
-			}
-		},
-		{
-			"type": "doc_verification",
-			"id": "mod_2",
-			"nextStep": "mod_3",
-			"properties": {
-				"allowUpload": "yes",
-				"url": "{region}.idv.hyperverge.co/v1/readId",
-				"showInstruction": "yes",
-				"documentsSupported": {
-					"usa": [
-						"passport",
-						"ssc",
-						"dl",
-						"id",
-						"bcc",
-						"gec",
-						"gc",
-						"mid",
-						"nexus",
-						"vid",
-						"wp",
-						"weaponpermit"
-					],
-					
-					"ind": [
-						"id",
-						"pan",
-						"voterid",
-						"passport"
-					],
-					
-					
-					
-					"vnm": [
-						"dl",
-						"id",
-						"passport"
-					]
-					
-				}
-			}
-		},
-		{
-			"type": "selfie_verification",
-			"id": "mod_3",
-			"nextStep": "condition_1"
-		},
-		{
-			"type": "face_match_verification",
-			"id": "mod_4",
-			"nextStep": "condition_2"
-		}
-	]
-	
+  "sdk_versions": {
+    "android": {
+      "maximum": "1.2.0",
+      "minimum": "1.0.0"
+    },
+    "ios": {
+      "maximum": "1.2.0",
+      "minimum": "1.0.0"
+    },
+    "websdk": {
+      "maximum": "1.2.0",
+      "minimum": "1.0.0"
+    }
+  },
+  "modules": [
+    {
+      "id": "module_1",
+      "nextStep": "module_2",
+      "properties": {
+        "countries": [
+          "nga",
+          "ind"
+        ]
+      },
+      "type": "countries"
+    },
+    {
+      "id": "module_2",
+      "nextStep": "condition_1",
+      "properties": {
+        "allowUpload": true,
+        "countryId": "{module_1.countryId}",
+        "documentsSupported": {
+          "ind": [
+            "pan",
+            "id",
+            "voterid"
+          ],
+          "nga": [
+            "passport"
+          ]
+        }
+      },
+      "variables": [
+        {
+          "name": "age",
+          "path": "front.response.body.result.details[0].fieldsExtracted.age.value"
+        }
+      ],
+      "type": "document"
+    },
+    {
+      "id": "module_3",
+      "nextStep": "condition_2",
+      "type": "face"
+    },
+    {
+      "type": "api",
+      "id": "module_4",
+      "properties": {
+        "url": "{module_1.baseUrl}/v1/matchFace",
+        "apiType": "multipart_post",
+        "requestParameters": [
+          {
+            "name": "image1",
+            "value": "module_2.front_imagePath",
+            "type": "image"
+          },
+          {
+            "name": "image2",
+            "value": "module_3.croppedImagePath",
+            "type": "image"
+          },
+          {
+            "name": "type",
+            "value": "id",
+            "type": "string"
+          }
+        ]
+      },
+      "variables": [
+        {
+          "name": "match",
+          "path": "response.body.result.details.match.value"
+        },
+        {
+          "name": "statusCode",
+          "path": "response.body.statusCode"
+        }
+      ],
+      "nextStep": "condition_3"
+    }
+  ],
+  "conditions": {
+    "condition_1": {
+      "if_false": "decline",
+      "if_true": "module_3",
+      "rule": "(module_2.front_statusCode == 200) || (module_2.front_statusCode == 422)"
+    },
+    "condition_2": {
+      "if_false": "decline",
+      "if_true": "module_4",
+      "rule": "module_3.statusCode == 200 && module_3.liveFace == 'yes'"
+    },
+    "condition_3": {
+      "if_false": "decline",
+      "if_true": "approve",
+      "rule": "module_4.match == 'yes'"
+    }
+  }
 }
