@@ -45,7 +45,7 @@
       "variables": [
         {
           "name": "dateOfBirth",
-          "path": "front.response.body.result.details[0].fieldsExtracted.dateOfBirth.value"
+          "path": "front.response.body.result.details.fieldsExtracted.dateOfBirth.value"
         }
       ],
       "type": "document"
