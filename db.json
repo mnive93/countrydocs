@@ -96,7 +96,7 @@
     "condition_1": {
       "if_false": "decline",
       "if_true": "module_3",
-      "rule": "(module_2.front_statusCode == 200) || (module_2.front_statusCode == 422) || (module_2.front_dateOfBirth == '20-01-1993')"
+      "rule": "(module_2.front_statusCode == 200) || (module_2.front_statusCode == 422)"
     },
     "condition_2": {
       "if_false": "decline",
