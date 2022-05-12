@@ -59,7 +59,7 @@
       "type": "api",
       "id": "module_4",
       "properties": {
-        "url": "{module_1.baseUrl}/v1/matchFace",
+        "url": "module_1.baseUrl/v1/matchFace",
         "apiType": "multipart_post",
         "requestParameters": [
           {
