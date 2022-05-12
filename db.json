@@ -82,7 +82,7 @@
       "variables": [
         {
           "name": "match",
-          "path": "response.body.result.details.match.value"
+          "path": "response.body.result.details[0].match.value"
         },
         {
           "name": "statusCode",
